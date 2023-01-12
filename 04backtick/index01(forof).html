@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = ["a", "b", "c"];
+        // for(let i in arr) {
+        //     console.log(i); //0, 1, 2 - 인덱스 값
+        // }
+
+        for(let i of arr) {
+            console.log(i); //a, b, c - value 값
+         }
+
+        for(let i of "hello world") { //반복 가능한 요소라 가능
+            console.log(i); //h e l(2) o 띄움 w o r l d
+         }
+        
+
+        let person = [ //person 배열의 객체 2개
+            {id: "aaa", age: 10},
+            {id: "bbb", age: 20}
+        ];
+
+        //구조 분해 할당 - of 구문 배열 가능
+        for(let {id, age} of person) { //배열 for in 안에서 구조 분해 할당 가능
+            console.log(id, age); //aaa 10, bbb 20
+        }
+
+        // 객체를 반복할 수는 없음 - 객체는 in 구문으로 돌려야 함
+        // let obj = {a: 1, b: 2};
+        // for(let i of obj) {
+        //     //error 뜸
+        // }
+
+    </script>
+
+</body>
+</html>

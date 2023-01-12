@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //JSON은 객체가 아니라 객체에 대한 표기법
+        //JSON 형식에서 distructuring 
+        let list = [ //배열
+            {num: 1, title: "hello", info: [1, 2, 3]/* 배열 */, profile: {birth: "2023"}/* 객체 */},
+            {num: 2, title: "bye", info: [4, 5, 6], profile: {birth: "2022"}}
+        ]
+
+        let [a, b] = list;
+        console.log(b); //object byt부분 나옴
+
+        //두번째 객체의 num, title
+        let [ , {num, title}] = list; //a객체는 안가져와서 비워놓음
+        console.log(num, title); //2, bye
+
+        //두번째 객체의 info, profile
+        let [, {info, profile}] = list;
+        console.log(info, profile);
+
+        //두번째 객체의 info를 다른 이름(iii)으로 가지고 나오기
+        let [, {info: iii}] = list;
+        console.log(iii);
+
+        //두번째 객체의 info 안의 첫번째 요소만 뽑아오기
+        let [, {info: [x]}] = list; //info= 배열 안에서 디스트럭쳐 사용
+        console.log(x); //가지고 나올때는 x를 뽑아와야 함
+
+        //두번째 객체의 profile 안의 birth 값을 다른 이름(y)으로
+        let [, {profile: {birth: y}}] = list; //{}안에 {}있는 구문이 나오면 구조 분해 할당이라고 생각하면, []배열-순서, {}객체-키값
+        console.log(y);
+    </script>
+
+</body>
+</html>

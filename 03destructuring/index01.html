@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let arr = [1, 2, 3, 4];
+        // let a1 = arr[0];
+        // let a2 = arr[1];
+
+        let [a, b, c, d] = arr; //arr를 분해해서 가져오는데 왼쪽에 그 요소를 나열해줌(요소의 개수 안 맞춰도 잘 나옴)
+        console.log(a, b, c, d);
+
+        let [a1, a2] = arr; //요소의 개수 안 맞춰도 잘 나옴
+        console.log(a1, a2);
+
+        let [k1, , , k4] = arr; //중간 요소 빼고 가져오기 (많이는 사용x)
+        console.log(k1, k4); //1, 4
+
+        let [y1, ...y2] = arr;
+        console.log(y1, y2); //1, [2, 3, 4] - y2는 배열로 나옴
+
+        let [...ar] = arr;
+        console.log(ar); //[1, 2, 3, 4] - 전부 다 나옴
+
+
+        function useState() {
+            return [1, function() {}]; //배열을 반환해주는데 하나는 1, 나머지는 함수
+        }
+
+        let result = useState();
+        console.log(result); //[1, ƒ]
+
+        //destructuring으로 할 수 있음
+        let [n1, n2] = useState();
+        console.log(n1, n2); //1 ƒ () {}(function)
+    </script>
+
+</body>
+</html>

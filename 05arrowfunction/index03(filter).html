@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //필터함수 - 콜백에 리턴이 true인 값을 이용해서 새로운 배열을 반환
+        //          원하는 값들만 걸러내서 새로운 배열을 만듦
+        //filter( 콜백(값, 인덱스, 현재배열), thisArg );
+
+        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        
+    /* 
+        let result = arr.filter( function(value, index, arr) { //arr은 매개변수가 다른 이름으로 써도 됨, 매개변수 이름은 어떤 것을 써도 됨
+            // console.log(value, index, arr);
+            // return value >= 5 ; //[5, 6, 7, 8, 9, 10] 5이상만 거르기
+            return value % 2 == 0 ; //[2, 4, 6, 8, 10] 짝수만 거르기
+        } );
+        console.log(result);
+    */
+
+    /* 
+        let result2 = arr.filter( a => a % 2 == 0 ); //첫번째가 value값이니까 하나만 적어도 됨
+        console.log(result2); //[2, 4, 6, 8, 10]
+    */
+
+    //배열 요소 중에 o가 들어간 문자열만 필터링
+    let arr3 = ["melon", "apple", "orange", "grape", "mango"];
+    let result3 = arr3.filter ( a => a.indexOf("o") != -1); //indexOf 사용
+    // let result3 = arr3.filter ( a => a.includes("o") ); //include 사용, 배열에 사용가능, 문자열에도 지원가능
+    console.log(result3);
+
+    </script>
+
+</body>
+</html>
