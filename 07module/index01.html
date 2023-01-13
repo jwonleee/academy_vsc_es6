@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script type="module">
+        //예제에서 module을 사용하려면 type을 반드시 적어야 됩니다.
+
+        //import1 - destructuring 방식
+        import {name, age, info, addr, myInfo} from './index01.js';
+        
+        console.log(name); //이순신
+        console.log(age); //20
+        info(); //이름:이순신, 나이:20 - 함수니까 그냥 호출 가능
+        console.log(addr); //서울시
+        myInfo(); //서울시
+        
+        console.log("--------------------------------------------------------");
+
+        //import2 - 엘리어스 방식
+        import * as test from './index01.js'; //호출할 떄 test.으로 하면 됨
+        
+        console.log(test.name);
+        console.log(test.age);
+        test.info();
+        console.log(test.addr);
+        test.myInfo();
+        console.log("--------------------------------------------------------");
+
+        //import - 이름붙여 가져오기
+        import {name as n, age as a} from './index01.js';
+
+        console.log(n);
+        console.log(a);
+        </script>
+
+</body>
+</html>
