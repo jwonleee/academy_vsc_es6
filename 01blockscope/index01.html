@@ -31,9 +31,17 @@
     </ul>
     
     <script>
-        /* var lis = document.querySelectorAll(".list li"); //배열로 4개
+        var lis = document.querySelectorAll(".list li"); //배열로 4개
         //var는 함수 스코프
-        for(var i = 0; i < lis.length; i++) {
+        
+        //var 변수로 반복문 돌렸을 경우 결과는 4 나옴
+        /* for(var i = 0; i < lis.length; i++) {
+                lis[i].onclick = function() {
+                    console.log(i);
+                };
+        } */
+
+        /* for(var i = 0; i < lis.length; i++) {
             (function(x) { //즉시 실행함수로 묶으면 var i가 함수 스코프로 바뀜
     
                 lis[x].onclick = function() {
