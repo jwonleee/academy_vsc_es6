@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //동기적 콜백 vs 비동기적 콜백
+
+        //동기적 콜백
+        function aaa(func) {
+            func("sucess");
+        }
+
+        //비동기적 콜백
+        function bbb(func) {
+            setTimeout(function() {
+                func("sucess");
+            },2000);
+        }
+
+
+        //결과: 1 sucess 2 3 5 sucess 4
+        console.log(1);
+        //동기적 콜백의 반환
+        aaa(function(result) {
+            console.log(result); //sucess
+            console.log(2);
+        })
+
+        console.log(3);
+
+        //비동기적 콜백의 반환
+        bbb(function(result) {
+            console.log(result); //sucess
+            console.log(4);
+        })
+
+        console.log(5);
+
+
+    </script>
+
+</body>
+</html>
